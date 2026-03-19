@@ -130,7 +130,7 @@
                         <div class="p-4 space-y-4 text-secondary-700">
 
                             <a href="#" class="block">Inventario</a>
-                            <a href="#" class="block">Productos</a>
+                            <a href="{{ route('productos.index') }}" class="block">Productos</a>
                             <a href="#" class="block">Reportes</a>
                             <a href="#" class="block">Configuración</a>
 

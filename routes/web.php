@@ -20,19 +20,63 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
+    // Dashboard
     Route::get('/dashboard', function () {
         return view('private.home');
     })->name('dashboard');
 
-    /*
-        Route::get('/perfil', function () {
-            return view('private.perfil');
-        });
 
-        Route::get('/configuracion', function () {
-            return view('private.configuracion');
-        });
+    /*
+    |--------------------------------------------------------------------------
+    | PERFIL
+    |--------------------------------------------------------------------------
     */
+    Route::get('/perfil', function () {
+        return view('private.perfil');
+    })->name('perfil');
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | PRODUCTOS
+    |--------------------------------------------------------------------------
+    */
+    Route::prefix('productos')->group(function () {
+        
+        //Vista
+        Route::get('/productos', function () {
+            return view('private.productos.index');
+        })->name('productos.index');
+        
+        /*    
+            // Ver lista
+            Route::get('/', function () {
+                return view('private.productos.index');
+            })->name('productos.');
+
+            // Crear producto (form)
+            Route::get('/crear', function () {
+                return view('private.productos.create');
+            })->name('productos.create');
+
+            // Guardar producto (POST)
+            Route::post('/', function () {
+                // lógica aquí
+            })->name('productos.store');
+        */
+            
+    });
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | CONFIGURACIÓN
+    |--------------------------------------------------------------------------
+    */
+    //Route::get('/configuracion', function () {
+    //    return view('private.configuracion');
+    //})->name('configuracion');
+
 });
 
 Route::middleware('auth')->group(function () {
