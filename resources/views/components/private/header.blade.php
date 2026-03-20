@@ -86,7 +86,16 @@
             <div class="p-4 space-y-4 text-secondary-700">
 
                 <a href="#" class="block">Inventario</a>
-                <a href="{{ route('productos.index') }}" class="block">Productos</a>
+
+                <!-- Productos -->
+                <a href="{{ route('productos.index') }}"
+                class="block md:hidden {{ $opt == 'productos' ? 'text-primary-500' : 'text-secondary-700' }} hover:text-primary-500">
+                    Productos
+                    @if($opt == 'productos')
+                        <span class="block w-full h-1 mt-1 bg-primary-500 rounded-full"></span>
+                    @endif
+                </a>
+                
                 <a href="#" class="block">Reportes</a>
                 <a href="#" class="block">Configuración</a>
 
