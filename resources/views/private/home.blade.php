@@ -1,5 +1,7 @@
 @extends('layouts.private')
 
+@php $opt = 'home'; @endphp
+
 @section('content')
 
 {{-- TÍTULO --}}

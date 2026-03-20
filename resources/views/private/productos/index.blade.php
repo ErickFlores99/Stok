@@ -1,5 +1,7 @@
 @extends('layouts.private')
 
+@php $opt = 'productos'; @endphp
+
 @section('content')
 
 {{-- TÍTULO --}}
