@@ -29,7 +29,6 @@
     </div>
 
     {{-- SCRIPTS --}}
-    //link header acctions
     <script src="{{ asset('js/private/header.js') }}"></script>
 
     @yield('scripts')
